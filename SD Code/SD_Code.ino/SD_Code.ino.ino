@@ -8,7 +8,9 @@ int tempSensorPin = 3;
 int pressureSensorPin = 4;
 int loadCellPin = 5;
 
-//need to change to work with amplifier
+//values too small with direct pin conenction
+//need to change to work with amplifier pins
+
 void setup() {
   
   Serial.begin(9600);
