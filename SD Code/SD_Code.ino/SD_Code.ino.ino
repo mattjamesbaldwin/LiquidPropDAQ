@@ -8,6 +8,7 @@ int tempSensorPin = 3;
 int pressureSensorPin = 4;
 int loadCellPin = 5;
 
+//need to change to work with amplifier
 void setup() {
   
   Serial.begin(9600);
@@ -50,4 +51,20 @@ void loop() {
   }else{
     Serial.println("Error openning file on SD card");
   }
+  
+    // Reading the file
+  dataFile = SD.open("test.txt");
+  if (dataFile) {
+    Serial.println("Read:");
+    // Reading the whole file
+    while (dataFile.available()) {
+      Serial.write(dataFile.read());
+   }
+    dataFile.close();
+  }
+  else {
+    Serial.println("error opening test.txt");
+  }
+  
+  //use pyplot on txt file in python
 }
